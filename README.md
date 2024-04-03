@@ -9,6 +9,7 @@
 1. Управление ячейками:
    - `CellInterface`: Может содержать обычный текст или формулы. Поддерживает установку, получение и очистку значений ячеек.
    - `CreateSheet()`: Создает новую таблицу, содержащую ячейки.
+   
    ```cpp
    auto sheet = CreateSheet();
    sheet->SetCell("A1"_pos, "Hello");
@@ -19,6 +20,7 @@
 2. Вычисление формулы:
    - `ParseFormula()`: Анализирует формульное выражение и возвращает указатель на формулу.
    - `Formula::Evaluate()`: Вычисляет формулу и возвращает результат.
+   
    ```cpp
    auto sheet = CreateSheet();
    sheet->SetCell("A1"_pos, "2");
@@ -30,6 +32,7 @@
 3. Форматирование выражений:
    - `ParseFormula()`: Анализирует формульное выражение и возвращает указатель на формулу.
    - `Formula::GetExpression()`: Форматирует обработанное формульное выражение для отображения.
+   
    ```cpp
    std::string expr = "2 + 2*2";
    auto formattedExpr = ParseFormula(expr)->GetExpression();
@@ -37,6 +40,7 @@
    ```
 4. Обработка ошибок:
    - Проект поддерживает различные категории ошибок, такие как "FormulaError::Category::Value" и "FormulaError::Category::!Arithm", которые указывают на ошибки при вычислении формулы.
+   
    ```cpp
    auto sheet = CreateSheet();
    sheet->SetCell("A1"_pos, "=1/0");
